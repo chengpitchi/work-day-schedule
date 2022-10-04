@@ -78,7 +78,6 @@ function renderTimeBlocks() {
 function saveEvent(event){
     var btnClicked = $(event.target);
 
-    console.log(btnClicked.parent('section')); 
     var eventItem = {
         hour: btnClicked.parent('section').data('hour'), 
         desc: btnClicked.parent('section').children().eq(1).val(), 
