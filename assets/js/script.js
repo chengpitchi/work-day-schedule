@@ -18,7 +18,7 @@ function renderTimeBlocks() {
     //reset the timeblock element
     timeBlockEl.empty(); 
 
-    for(var i = 9; i <= 17; i++) {
+    for(var i = 0; i <= 23; i++) {
         var sectionEl = $('<section>')
 
         // create hour column
@@ -78,10 +78,21 @@ function renderTimeBlocks() {
 function saveEvent(event){
     var btnClicked = $(event.target);
 
-    var eventItem = {
-        hour: btnClicked.parent('section').data('hour'), 
-        desc: btnClicked.parent('section').children().eq(1).val(), 
-        date: moment().format('YYYYMMDD')
+    
+    if (btnClicked.prop('localName') === 'button') {
+        // get values if the target is the button
+        var eventItem = {
+            hour: btnClicked.parent('section').data('hour'), 
+            desc: btnClicked.parent('section').children().eq(1).val().trim(), 
+            date: moment().format('YYYYMMDD')
+        }
+    } else {
+        // get values if the target is the icon on the button 
+        var eventItem = {
+            hour: btnClicked.parent('button').parent('section').data('hour'), 
+            desc: btnClicked.parent('button').parent('section').children().eq(1).val().trim(), 
+            date: moment().format('YYYYMMDD')
+        }
     }
 
     // validate the input 
