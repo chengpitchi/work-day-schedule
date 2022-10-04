@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; 
   font-size: 16px;
   line-height: 1;
 }
@@ -32,7 +32,7 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 99px;
   border-top: 1px solid white;
 }
 
@@ -58,6 +58,7 @@ textarea {
 }
 
 .saveBtn {
+  border-color: white;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
