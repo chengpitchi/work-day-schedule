@@ -1,10 +1,8 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# 05 Work Day Scheduler
 
-## Your Task
+## Overview 
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
-
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+This is the challenge after completing the week 5 (Third Party APIs) of the Adelaide University Coding Bootcamp. 
 
 ## User Story
 
@@ -32,68 +30,67 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-The following animation demonstrates the application functionality:
+## Solution
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+Steps to resolve the Challenge:
 
+1. Examine the starter code for the available style in the css file. 
 
-## Grading Requirements
+2. Use moment.js to get and format the current date and display on the header. 
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+3. Based on the current styles in css file, build a sample time-block with responsive design by bootstrap framework in the html file. 
 
-This Challenge is graded based on the following criteria: 
+4. Convert the time-block built in html by dynamically generating the elements using jQuery.
 
-### Technical Acceptance Criteria: 40%
+5. Add delegated event listerners to the save buttons of each row in the time-block.
 
-* Satisfies all of the above acceptance criteria plus the following:
+6. Add save event function to save the user input to the local storage.
 
-  * Uses a date utility library to work with date and time
+7. Add coding to retrieve the saved events when rendering the time-block. 
 
-### Deployment: 32%
+8. Add validations and checkings to the program to avoid wrong user inputs and operations causing errors to the program. 
 
-* Application deployed at live URL
+<br>
 
-* Application loads with no errors
+## Test Cases and Result
 
-* Application GitHub URL submitted
+| Test Case | Testing Criteria                                                     | Expected Result                                                                                                             | Actual Result | Result |
+|:---------:|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|:-------------:|:------:|
+|     1     | Load the page in the Chrome browser.                                 | The current date is displayed on the header.  The time blocks of standard business hour (9AM to 5PM) is rendered correctly  |  As expected  |  Pass  |
+|     2     | Check the color of the event column.                                 | Different colours is displayed for past, present and future events.                                                         |  As expected  |  Pass  |
+|     3     | Try to input information to the past event.                          | The past event is disabled and not allow to input.                                                                          |  As expected  |  Pass  |
+|     4     | Try to click save button for the past event.                         | A message is shown to notify user that cannot save past events.                                                             |  As expected  |  Pass  |
+|     5     | Try to input information to the present event.                       | User is allowed to input in the present event.                                                                              |  As expected  |  Pass  |
+|     6     | Try to click save button for the present event.                      | The present event is saved successfully.                                                                                    |  As expected  |  Pass  |
+|     7     | Try to input information to the future event.                        | User is allowed to input in the future event.                                                                               |  As expected  |  Pass  |
+|     8     | Try to click save button for the future event.                       | The future event is saved successfully.                                                                                     |  As expected  |  Pass  |
+|     9     | Close the browser session. Open another session and reload the page. | All the save events are shown on the screens.                                                                               |  As expected  |  Pass  |
+|     10    | Click save button for the event without any input.                   | A message is shown to notify user that no input in the event description.                                                   |  As expected  |  Pass  |
 
-* GitHub repo contains application code
+<br>
 
-### Application Quality: 15%
+## Live URL 
 
-* Application user experience is intuitive and easy to navigate
+https://chengpitchi.github.io/work-day-schedule/
+<br>
 
-* Application user interface style is clean and polished
+## Screenshots for the Solution
 
-* Application resembles the mock-up functionality provided in the Challenge instructions
+![This is the first solution screenshot for Work Day Schedule](./assets/images/work-day-schedule-screen1.png)
+<br>
+![This is the second solution screenshot for Work Day Schedule](./assets/images/work-day-schedule-screen2.png)
+<br>
+![This is the third solution screenshot for Work Day Schedule](./assets/images/work-day-schedule-screen3.png)
+<br>
+![This is the fourth solution screenshot for Work Day Schedule](./assets/images/work-day-schedule-screen4.png)
+<br>
+![This is the fifth solution screenshot for Work Day Schedule](./assets/images/work-day-schedule-screen5.png)
+<br>
 
-### Repository Quality: 13%
+## Installation
 
-* Repository has a unique name
+No Installation requried.
 
-* Repository follows best practices for file structure and naming conventions
+## License 
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Not Applicable
