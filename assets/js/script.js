@@ -18,7 +18,7 @@ function renderTimeBlocks() {
     //reset the timeblock element
     timeBlockEl.empty(); 
 
-    for(var i = 0; i <= 23; i++) {
+    for(var i = 9; i <= 17; i++) {
         var sectionEl = $('<section>')
 
         // create hour column
