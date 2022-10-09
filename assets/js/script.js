@@ -1,7 +1,7 @@
 var currentDateEl = $('#currentDay'); 
 var currentDate = moment().format('dddd, MMMM Do YYYY'); 
 var timeBlockEl = $('.time-block'); 
-var messageEl = $('#message'); 
+var messageEl = $('#message-bar'); 
 
 currentDateEl.text(currentDate); 
 
@@ -97,12 +97,12 @@ function saveEvent(event){
 
     // validate the input 
     if (eventItem.hour < moment().format('H')) {
-        alert('Cannot save past event.'); 
+        displayMessage('Cannot save past event.'); 
         return; 
     }
 
     if (eventItem.desc === '') {
-        alert('No input on the event description.')
+        displayMessage('No input on the event description.')
         return; 
     }
 
@@ -123,9 +123,16 @@ function saveEvent(event){
     }
 
     localStorage.setItem('eventList', JSON.stringify(eventList)); 
-    alert('Event Information is saved successfully.'); 
+    displayMessage('Event Information is saved successfully.'); 
 
     renderTimeBlocks(); 
+}
+
+function displayMessage(strMessage) {
+    messageEl.text(strMessage);  
+    messageEl.show(); 
+
+    setTimeout(function(){messageEl.hide()}, 1500); 
 }
 
 // delegate the event listener to the save buttons from the time block element
